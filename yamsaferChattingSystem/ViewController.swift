@@ -198,7 +198,6 @@ class ViewController: JSQMessagesViewController {
         var message = messages[indexPath.row]
         
         var stringTime:String!  = TimeFormater.formatFromFormatTemplate(message.date, format: DateFormatesOptions.DEFAULT_FORMAT_WITH_HOUR) as String
-        println(stringTime)
         
         let index = advance(stringTime.startIndex, 16)
         
