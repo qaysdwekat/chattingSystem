@@ -21,8 +21,6 @@ class ViewController: JSQMessagesViewController {
   
     var dateTime:NSDate!
     
-    var stringTime:String!
-
     var userImageUrl = Dictionary<String, AnyObject>()
     
     let incomingBubble = JSQMessagesBubbleImageFactory().incomingMessagesBubbleImageWithColor(UIColor(red: 10/255, green: 180/255, blue: 230/255, alpha: 1.0))
@@ -45,7 +43,7 @@ class ViewController: JSQMessagesViewController {
         
         showLoadEarlierMessagesHeader = true
         
-        udid = "878787"
+        udid = "0000"
         
         
         FirebaseManager.registerForIncomingMessgaes(udid ,callBack: { (snapshot) in
@@ -198,24 +196,34 @@ class ViewController: JSQMessagesViewController {
     override func collectionView(collectionView: JSQMessagesCollectionView!,attributedTextForCellTopLabelAtIndexPath indexPath: NSIndexPath!) -> NSAttributedString!{
         
         var message = messages[indexPath.row]
-        self.stringTime  = TimeFormater.formatFromFormatTemplate(message.date, format: DateFormatesOptions.DEFAULT_FORMAT_WITH_HOUR) as String
+        
+        var stringTime:String!  = TimeFormater.formatFromFormatTemplate(message.date, format: DateFormatesOptions.DEFAULT_FORMAT_WITH_HOUR) as String
+        println(stringTime)
+        
+        let index = advance(stringTime.startIndex, 16)
+        
+        var timeString:String! = stringTime.substringToIndex(index)
+        
         
         // Same as previous sender, skip
         if indexPath.item > 0 {
             
             let previousMessage = messages[indexPath.item - 1];
             
-            let previousTime  = TimeFormater.formatFromFormatTemplate(previousMessage.date, format: DateFormatesOptions.DEFAULT_FORMAT_WITH_HOUR) as String
+            var previousTime:String!  = TimeFormater.formatFromFormatTemplate(previousMessage.date, format: DateFormatesOptions.DEFAULT_FORMAT_WITH_HOUR) as String
             
-            if previousTime == self.stringTime {
+            previousTime = previousTime.substringToIndex(index)
+            
+            if previousTime == timeString {
                 
                 return nil;
             }
         }
-        var time = TimeFormater.dateFromString(self.stringTime, format: DateFormatesOptions.DEFAULT_FORMAT_WITH_HOUR)
+        var time = TimeFormater.dateFromString(stringTime, format: DateFormatesOptions.DEFAULT_FORMAT_WITH_HOUR)
         
-        var timeString:String! = TimeFormater.messagesDateFormat(time)
-        return NSAttributedString(string:timeString)
+        stringTime = TimeFormater.messagesDateFormat(time)
+        
+         return NSAttributedString(string:timeString)
     }
       
 }

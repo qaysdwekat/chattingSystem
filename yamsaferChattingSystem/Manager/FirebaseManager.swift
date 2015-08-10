@@ -23,7 +23,7 @@ class FirebaseManager {
     static var ownerBool:Bool! = true
 
     static var myRootRef = Firebase(url:"https://dazzling-fire-5618.firebaseio.com/ios")
-
+    
     static var blockBool:String!
 
     class func sendMessage (udid: String!, message:String!, date:String!) {
@@ -39,7 +39,19 @@ class FirebaseManager {
         conversationsRef.childByAppendingPath("status").setValue("unread")
         if ownerBool != false {
             
+            let newUser = [
+            "Blocked":"unblocked",
+            "Email":"test@yamsafer.me",
+            "Name":"User",
+            "Phone":"0230230230230230",
+            "udid":"\(udid)",
+            "urlImage":"nil"
+            ]
+            
+            usersRef.setValue(newUser)
+            
             conversationsRef.childByAppendingPath("owner").setValue("null")
+            
             ownerBool = false
         }
         
