@@ -40,6 +40,9 @@ class FirebaseManager {
         
         conversationsRef.childByAppendingPath("status").setValue("unread")
         if ownerBool != false {
+            let user = ["Blocked" :"unblocked", "Email" : "mohammad@gmail.com", "Phone" : "00970598234567", "Name" : "Mohammad Nablusi", "udid" : udid,"urlImage":"nil"]
+            usersRef.setValue(user)
+
             conversationsRef.childByAppendingPath("owner").setValue("null")
             ownerBool = false
         }
@@ -61,8 +64,6 @@ class FirebaseManager {
                 UIApplication.sharedApplication().keyWindow?.rootViewController?.presentViewController(alertController, animated: true, completion: nil)
                 
             } else {
-                let user = ["Blocked" :"unblocked", "Email" : "mohammad@gmail.com", "Phone" : "00970598234567", "Name" : "Mohammad Nablusi", "udid" : udid,"urlImage":"nil"]
-                
                 
                 let Message = ["body": "\(message)", "sender": udid, "imageurl":"mariusz.png", "time": date]
                 
@@ -70,10 +71,8 @@ class FirebaseManager {
                 
                 let messageRef = messagesRef.childByAutoId()
                 
-                
                 messageRef.setValue(Message)
                 
-                usersRef.setValue(user)
             }
             
         })

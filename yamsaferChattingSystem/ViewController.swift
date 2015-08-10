@@ -40,12 +40,12 @@ class ViewController: JSQMessagesViewController {
         // Do any additional setup after loading the view, typically from a nib.
         
         inputToolbar.contentView.leftBarButtonItem = nil
-        
+
         automaticallyScrollsToMostRecentMessage = true
         
         showLoadEarlierMessagesHeader = true
         
-        udid = "4444"
+        udid = "878787"
         
         
         FirebaseManager.registerForIncomingMessgaes(udid ,callBack: { (snapshot) in
