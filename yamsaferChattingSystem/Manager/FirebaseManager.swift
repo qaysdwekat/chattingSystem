@@ -18,17 +18,15 @@ import Foundation
 import Foundation
 
 
-
 class FirebaseManager {
-        
+
+    static var ownerBool:Bool! = true
+
+    static var myRootRef = Firebase(url:"https://dazzling-fire-5618.firebaseio.com/ios")
+
+    static var blockBool:String!
+
     class func sendMessage (udid: String!, message:String!, date:String!) {
-
-        var myRootRef = Firebase(url:"https://dazzling-fire-5618.firebaseio.com/ios")
-
-        var ownerBool:Bool! = true
-        
-        var blockBool:String!
-        
         
         let usersRef = myRootRef.childByAppendingPath("users/\(udid)")
         
@@ -40,12 +38,11 @@ class FirebaseManager {
         
         conversationsRef.childByAppendingPath("status").setValue("unread")
         if ownerBool != false {
-            let user = ["Blocked" :"unblocked", "Email" : "mohammad@gmail.com", "Phone" : "00970598234567", "Name" : "Mohammad Nablusi", "udid" : udid,"urlImage":"nil"]
-            usersRef.setValue(user)
-
+            
             conversationsRef.childByAppendingPath("owner").setValue("null")
             ownerBool = false
         }
+        
         let blockRoot = Firebase(url:"https://dazzling-fire-5618.firebaseio.com/ios/users/\(udid)/")
         
         blockRoot.observeSingleEventOfType(.Value, withBlock: {
@@ -53,9 +50,9 @@ class FirebaseManager {
             
             let value = snapshot.value as! NSDictionary
             
-            blockBool = value["Blocked"] as! String
+            self.blockBool = value["Blocked"] as! String
             
-            if blockBool == "blocked" {
+            if self.blockBool == "blocked" {
                 
                 let alertController = UIAlertController(title: "System Alert", message:
                     "Sorry you can't send this message  ", preferredStyle: UIAlertControllerStyle.Alert)
@@ -81,8 +78,6 @@ class FirebaseManager {
     
     class func registerForIncomingMessgaes(udid:String! ,callBack:((FDataSnapshot!) -> Void)!){
        
-        var myRootRef = Firebase(url:"https://dazzling-fire-5618.firebaseio.com/ios")
-
         let conversationsRef = myRootRef.childByAppendingPath("conversations/"+udid+"/messages")
         
         conversationsRef.queryLimitedToLast(10).observeEventType(FEventType.ChildAdded, withBlock:callBack)
@@ -99,8 +94,6 @@ class FirebaseManager {
     }
     
     class func loadEarlierMessages(udid:String! ,callBack:((FDataSnapshot!) -> Void)!, number: UInt){
-
-        var myRootRef = Firebase(url:"https://dazzling-fire-5618.firebaseio.com/ios")
   
         let conversationsRef = myRootRef.childByAppendingPath("conversations/"+udid+"/messages")
 
