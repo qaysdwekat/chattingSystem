@@ -9,10 +9,13 @@
 /* Begin PBXBuildFile section */
 		566F417D1B7339B70058CD74 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 566F417C1B7339B70058CD74 /* AppDelegate.swift */; };
 		566F417F1B7339B70058CD74 /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 566F417E1B7339B70058CD74 /* ViewController.swift */; };
-		566F41821B7339B70058CD74 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 566F41801B7339B70058CD74 /* Main.storyboard */; };
 		566F41841B7339B70058CD74 /* Images.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 566F41831B7339B70058CD74 /* Images.xcassets */; };
 		566F41871B7339B70058CD74 /* LaunchScreen.xib in Resources */ = {isa = PBXBuildFile; fileRef = 566F41851B7339B70058CD74 /* LaunchScreen.xib */; };
 		566F41931B7339B70058CD74 /* yamsaferChattingSystemTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 566F41921B7339B70058CD74 /* yamsaferChattingSystemTests.swift */; };
+		566F419E1B733AB70058CD74 /* FirebaseManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 566F419D1B733AB70058CD74 /* FirebaseManager.swift */; };
+		566F41A11B73592C0058CD74 /* TimeFormater.swift in Sources */ = {isa = PBXBuildFile; fileRef = 566F41A01B73592C0058CD74 /* TimeFormater.swift */; };
+		566F41B11B74A7C30058CD74 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 566F41B01B74A7C30058CD74 /* Main.storyboard */; };
+		6572432EEC97317BC26E5ACE /* libPods.a in Frameworks */ = {isa = PBXBuildFile; fileRef = ECAF1E61C4EA86D67E4360CB /* libPods.a */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -30,12 +33,18 @@
 		566F417B1B7339B70058CD74 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		566F417C1B7339B70058CD74 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		566F417E1B7339B70058CD74 /* ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewController.swift; sourceTree = "<group>"; };
-		566F41811B7339B70058CD74 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
 		566F41831B7339B70058CD74 /* Images.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Images.xcassets; sourceTree = "<group>"; };
 		566F41861B7339B70058CD74 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.xib; name = Base; path = Base.lproj/LaunchScreen.xib; sourceTree = "<group>"; };
 		566F418C1B7339B70058CD74 /* yamsaferChattingSystemTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = yamsaferChattingSystemTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		566F41911B7339B70058CD74 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		566F41921B7339B70058CD74 /* yamsaferChattingSystemTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = yamsaferChattingSystemTests.swift; sourceTree = "<group>"; };
+		566F419D1B733AB70058CD74 /* FirebaseManager.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = FirebaseManager.swift; sourceTree = "<group>"; };
+		566F419F1B733AE20058CD74 /* objectview-c-yamsafer-bridging_file.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = "objectview-c-yamsafer-bridging_file.h"; sourceTree = "<group>"; };
+		566F41A01B73592C0058CD74 /* TimeFormater.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = TimeFormater.swift; sourceTree = "<group>"; };
+		566F41B01B74A7C30058CD74 /* Main.storyboard */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.storyboard; path = Main.storyboard; sourceTree = "<group>"; };
+		7D0F60DC51ECBA42A6A409AD /* Pods.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = Pods.release.xcconfig; path = "Pods/Target Support Files/Pods/Pods.release.xcconfig"; sourceTree = "<group>"; };
+		ECAF1E61C4EA86D67E4360CB /* libPods.a */ = {isa = PBXFileReference; explicitFileType = archive.ar; includeInIndex = 0; path = libPods.a; sourceTree = BUILT_PRODUCTS_DIR; };
+		F73FD2A6994D6F0F82097344 /* Pods.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = Pods.debug.xcconfig; path = "Pods/Target Support Files/Pods/Pods.debug.xcconfig"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -43,6 +52,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				6572432EEC97317BC26E5ACE /* libPods.a in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -62,6 +72,8 @@
 				566F41791B7339B70058CD74 /* yamsaferChattingSystem */,
 				566F418F1B7339B70058CD74 /* yamsaferChattingSystemTests */,
 				566F41781B7339B70058CD74 /* Products */,
+				9E8E1503AC1B21E3B6D4EF8A /* Pods */,
+				980A0333BCC85A0AFD5E7CD3 /* Frameworks */,
 			);
 			sourceTree = "<group>";
 		};
@@ -78,11 +90,13 @@
 			isa = PBXGroup;
 			children = (
 				566F417C1B7339B70058CD74 /* AppDelegate.swift */,
+				566F41B01B74A7C30058CD74 /* Main.storyboard */,
 				566F417E1B7339B70058CD74 /* ViewController.swift */,
-				566F41801B7339B70058CD74 /* Main.storyboard */,
 				566F41831B7339B70058CD74 /* Images.xcassets */,
+				566F419C1B733A9A0058CD74 /* Manager */,
 				566F41851B7339B70058CD74 /* LaunchScreen.xib */,
 				566F417A1B7339B70058CD74 /* Supporting Files */,
+				566F41A01B73592C0058CD74 /* TimeFormater.swift */,
 			);
 			path = yamsaferChattingSystem;
 			sourceTree = "<group>";
@@ -91,6 +105,7 @@
 			isa = PBXGroup;
 			children = (
 				566F417B1B7339B70058CD74 /* Info.plist */,
+				566F419F1B733AE20058CD74 /* objectview-c-yamsafer-bridging_file.h */,
 			);
 			name = "Supporting Files";
 			sourceTree = "<group>";
@@ -112,6 +127,31 @@
 			name = "Supporting Files";
 			sourceTree = "<group>";
 		};
+		566F419C1B733A9A0058CD74 /* Manager */ = {
+			isa = PBXGroup;
+			children = (
+				566F419D1B733AB70058CD74 /* FirebaseManager.swift */,
+			);
+			path = Manager;
+			sourceTree = "<group>";
+		};
+		980A0333BCC85A0AFD5E7CD3 /* Frameworks */ = {
+			isa = PBXGroup;
+			children = (
+				ECAF1E61C4EA86D67E4360CB /* libPods.a */,
+			);
+			name = Frameworks;
+			sourceTree = "<group>";
+		};
+		9E8E1503AC1B21E3B6D4EF8A /* Pods */ = {
+			isa = PBXGroup;
+			children = (
+				F73FD2A6994D6F0F82097344 /* Pods.debug.xcconfig */,
+				7D0F60DC51ECBA42A6A409AD /* Pods.release.xcconfig */,
+			);
+			name = Pods;
+			sourceTree = "<group>";
+		};
 /* End PBXGroup section */
 
 /* Begin PBXNativeTarget section */
@@ -119,9 +159,11 @@
 			isa = PBXNativeTarget;
 			buildConfigurationList = 566F41961B7339B70058CD74 /* Build configuration list for PBXNativeTarget "yamsaferChattingSystem" */;
 			buildPhases = (
+				130EBC1C7595800E65B04141 /* Check Pods Manifest.lock */,
 				566F41731B7339B70058CD74 /* Sources */,
 				566F41741B7339B70058CD74 /* Frameworks */,
 				566F41751B7339B70058CD74 /* Resources */,
+				5890B4EEC99A3EDFE6A3576C /* Copy Pods Resources */,
 			);
 			buildRules = (
 			);
@@ -192,7 +234,7 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				566F41821B7339B70058CD74 /* Main.storyboard in Resources */,
+				566F41B11B74A7C30058CD74 /* Main.storyboard in Resources */,
 				566F41871B7339B70058CD74 /* LaunchScreen.xib in Resources */,
 				566F41841B7339B70058CD74 /* Images.xcassets in Resources */,
 			);
@@ -207,11 +249,46 @@
 		};
 /* End PBXResourcesBuildPhase section */
 
+/* Begin PBXShellScriptBuildPhase section */
+		130EBC1C7595800E65B04141 /* Check Pods Manifest.lock */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+			);
+			name = "Check Pods Manifest.lock";
+			outputPaths = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "diff \"${PODS_ROOT}/../Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [[ $? != 0 ]] ; then\n    cat << EOM\nerror: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\nEOM\n    exit 1\nfi\n";
+			showEnvVarsInLog = 0;
+		};
+		5890B4EEC99A3EDFE6A3576C /* Copy Pods Resources */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+			);
+			name = "Copy Pods Resources";
+			outputPaths = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "\"${SRCROOT}/Pods/Target Support Files/Pods/Pods-resources.sh\"\n";
+			showEnvVarsInLog = 0;
+		};
+/* End PBXShellScriptBuildPhase section */
+
 /* Begin PBXSourcesBuildPhase section */
 		566F41731B7339B70058CD74 /* Sources */ = {
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				566F41A11B73592C0058CD74 /* TimeFormater.swift in Sources */,
+				566F419E1B733AB70058CD74 /* FirebaseManager.swift in Sources */,
 				566F417F1B7339B70058CD74 /* ViewController.swift in Sources */,
 				566F417D1B7339B70058CD74 /* AppDelegate.swift in Sources */,
 			);
@@ -236,14 +313,6 @@
 /* End PBXTargetDependency section */
 
 /* Begin PBXVariantGroup section */
-		566F41801B7339B70058CD74 /* Main.storyboard */ = {
-			isa = PBXVariantGroup;
-			children = (
-				566F41811B7339B70058CD74 /* Base */,
-			);
-			name = Main.storyboard;
-			sourceTree = "<group>";
-		};
 		566F41851B7339B70058CD74 /* LaunchScreen.xib */ = {
 			isa = PBXVariantGroup;
 			children = (
@@ -338,21 +407,25 @@
 		};
 		566F41971B7339B70058CD74 /* Debug */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = F73FD2A6994D6F0F82097344 /* Pods.debug.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				INFOPLIST_FILE = yamsaferChattingSystem/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_OBJC_BRIDGING_HEADER = "/Users/qaysdwekat/Desktop/yamsaferChattingSystem/yamsaferChattingSystem/objectview-c-yamsafer-bridging_file.h";
 			};
 			name = Debug;
 		};
 		566F41981B7339B70058CD74 /* Release */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = 7D0F60DC51ECBA42A6A409AD /* Pods.release.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				INFOPLIST_FILE = yamsaferChattingSystem/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_OBJC_BRIDGING_HEADER = "/Users/qaysdwekat/Desktop/yamsaferChattingSystem/yamsaferChattingSystem/objectview-c-yamsafer-bridging_file.h";
 			};
 			name = Release;
 		};
@@ -409,6 +482,7 @@
 				566F41981B7339B70058CD74 /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 		566F41991B7339B70058CD74 /* Build configuration list for PBXNativeTarget "yamsaferChattingSystemTests" */ = {
 			isa = XCConfigurationList;
@@ -417,6 +491,7 @@
 				566F419B1B7339B70058CD74 /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 /* End XCConfigurationList section */
 	};
